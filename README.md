@@ -1,6 +1,8 @@
 # RubberduckRace
 Rubberduckrace simulation
 
+ducks per Queue is set at Class: RaceSimulator, line 10
+
 Print fra race.
 
 [[Duck5, Duck3, Duck1, Duck8], [Duck13, Duck15, Duck12, Duck9], [Duck6, Duck7, Duck4, Duck10], [Duck14, Duck2, Duck0, Duck11]]

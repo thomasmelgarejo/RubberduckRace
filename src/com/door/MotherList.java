@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MotherList {
-    List<SmallQueue> momList = new ArrayList<>();
+    private List<SmallQueue> momList = new ArrayList<>();
+
+    /**Makes momlist accesible from other classes
+     *
+     * @return
+     */
+    public List<SmallQueue> getMomList(){
+        return this.momList;
+    }
 
     /**Adds a Queue to a arraylist
      *

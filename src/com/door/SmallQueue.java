@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class SmallQueue {
-    public Queue<Duck> que = new LinkedList<>();
+    private Queue<Duck> que = new LinkedList<>();
 
     /**Adds a duck to Queue
      *

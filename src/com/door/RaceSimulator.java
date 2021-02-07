@@ -25,7 +25,7 @@ public class RaceSimulator {
 
         //race
         race(motherObj);
-        //System.out.println("VINNER" + race(motherObj));
+
 
     }
 
@@ -54,7 +54,7 @@ public class RaceSimulator {
 
                 while (!isTransferred){
                     int randomExtract = radNo(1+n-i);
-                    transferDuck = motherObj.momList.get(randomExtract).takeDuck();
+                    transferDuck = motherObj.getMomList().get(randomExtract).takeDuck();
 
                     //System.out.println("transferDuck: "+transferDuck);
                     if(transferDuck != null){
@@ -69,7 +69,7 @@ public class RaceSimulator {
                     int randomInsert = radNo(n-i);
 
                     //Inserts duck, if fail returns false
-                    isInserted = emptyMotherList.momList.get(randomInsert).addDuck(transferDuck,n-i);
+                    isInserted = emptyMotherList.getMomList().get(randomInsert).addDuck(transferDuck,n-i);
 
                     if (isInserted){isTransferred=false;}
                 }
@@ -78,8 +78,9 @@ public class RaceSimulator {
 
             printStage(emptyMotherList);
 
-            motherObj.momList.clear();
-            motherObj.momList.addAll(emptyMotherList.momList);
+            //Transfer data from temp motherList
+            motherObj.getMomList().clear();
+            motherObj.getMomList().addAll(emptyMotherList.getMomList());
 
         } //big for-loop
 
@@ -91,11 +92,11 @@ public class RaceSimulator {
      */
     private void printStage(MotherList mo) {
         System.out.println("*************************************************************");
-        if (mo.momList.size()==1){
+        if (mo.getMomList().size()==1){
             System.out.print("          VINNER: ");
         }
         System.out.println(mo);
-        if (mo.momList.size()==1){
+        if (mo.getMomList().size()==1){
             System.out.print("*************************************************************");
         }
 
@@ -128,7 +129,7 @@ public class RaceSimulator {
         for (int i = 0; i < numberOdDucksPerQueue; i++) {
 
             for (int j = 0; j < numberOdDucksPerQueue; j++) {
-                motherList.momList.get(i).addDuck(new Duck(arrList.get(counter)),numberOdDucksPerQueue);
+                motherList.getMomList().get(i).addDuck(new Duck(arrList.get(counter)),numberOdDucksPerQueue);
                 counter++;
             }
         }
